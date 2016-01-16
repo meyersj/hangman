@@ -51,7 +51,7 @@ class Hangman(object):
         # check their guess, print response then exit game
         if guess == "WIN":
             word = UI.guess_word()
-            self.__winner(word.lower())
+            self.__is_winner(word.lower())
             return False
         
         # check if guess matches any characters and update 
@@ -67,7 +67,7 @@ class Hangman(object):
             self.status += 1
         return True
 
-    def __winner(self, word_guess):
+    def __is_winner(self, word_guess):
         winner = "You WON!!!!!!\n"
         loser = "You're guess {0} was wrong, actual word was {1}. Loser"
         if word_guess == self.word: 
